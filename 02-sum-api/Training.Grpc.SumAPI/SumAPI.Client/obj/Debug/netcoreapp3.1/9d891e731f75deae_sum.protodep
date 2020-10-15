@@ -1,0 +1,2 @@
+Models/Sum.cs \
+Models/SumGrpc.cs: ../sum.proto

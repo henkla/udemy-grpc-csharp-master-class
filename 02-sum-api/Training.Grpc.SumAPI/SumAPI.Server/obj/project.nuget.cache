@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "yvwulJrzqZhMoVE9knH/FWWb0fF91veuNwRByeMf/Q6rDlFPKd5pToSSPJ0KXsiZLj5k4jitYpsUpSHA4fCoIA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HenrikLarsson\\Utveckling\\Training\\udemy-grpc-csharp-master-class\\02-sum-api\\Training.Grpc.SumAPI\\SumAPI.Server\\SumAPI.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\google.protobuf\\3.13.0\\google.protobuf.3.13.0.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc\\2.32.0\\grpc.2.32.0.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.core\\2.32.0\\grpc.core.2.32.0.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.core.api\\2.32.0\\grpc.core.api.2.32.0.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.tools\\2.32.0\\grpc.tools.2.32.0.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}
