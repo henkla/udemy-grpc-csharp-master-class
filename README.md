@@ -1,4 +1,4 @@
 # Resources
 
 ### Error Handling
-[gRPC Error Handling](https://grpcs.io/docs/guides/error.html)
+[gRPC Error Handling](https://grpc.io/docs/guides/error.html)
