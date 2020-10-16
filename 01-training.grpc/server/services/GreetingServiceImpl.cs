@@ -27,6 +27,7 @@ namespace server.services
             foreach (var index in Enumerable.Range(1, 10))
             {
                 await responseStream.WriteAsync(new GreetManyTimesResponse() { Result = result });
+                await Task.Delay(500);
             }
         }
     }
