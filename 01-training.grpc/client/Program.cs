@@ -11,6 +11,7 @@ namespace client
     class Program
     {
         private const string target = "localhost:50051";
+
         static async Task Main(string[] args)
         {
             // we need a channel - the actual connection
@@ -27,24 +28,37 @@ namespace client
 
             // this is the data object ()wrapped in a request) that will be sent to the server through the client
             var greeting = new Greeting { FirstName = "Henrik", LastName = "Larsson" };
-
-
-            /*
-                    UNARY REQUEST
-             */
-            Console.WriteLine($"Unary request: {greeting}");
             
+            //await DoUnaryGreet(client, greeting);
+            //await DoStreamingServerGreet(client, greeting);
+            //await DoDoStreamingClientGreet(client, greeting);
+            await DoBidirectionalGreet(client);
+
+            // shut down the connection to the gRPC server
+            channel.ShutdownAsync().Wait();
+            Console.ReadKey();
+        }
+
+        private static async Task DoUnaryGreet(GreetingService.GreetingServiceClient client, Greeting greeting)
+        {
+            /*
+                                UNARY REQUEST
+                         */
+            Console.WriteLine($"Unary request: {greeting}");
+
             // call the service with the request through the client
             var unaryResponse = client.Greet(new GreetingRequest { Greeting = greeting });
-            
+
             // check the response from the unary service request
             Console.WriteLine($"Response: {unaryResponse.Result}");
             Console.ReadKey();
+        }
 
-
+        private static async Task DoStreamingServerGreet(GreetingService.GreetingServiceClient client, Greeting greeting)
+        {
             /*
-                    STREAMING SERVER REQUEST
-             */
+                                STREAMING SERVER REQUEST
+                         */
             Console.WriteLine($"Server streaming request: {greeting}");
 
             // the streaming server needs a specific request (wrapping the same data object as in the unary case)
@@ -56,11 +70,13 @@ namespace client
                 Console.WriteLine($"Response: {streamingServerResponse.ResponseStream.Current.Result}");
             }
             Console.ReadKey();
+        }
 
-
+        private static async Task DoDoStreamingClientGreet(GreetingService.GreetingServiceClient client, Greeting greeting)
+        {
             /*
-                    STREAMING CLIENT REQUEST
-             */
+                                STREAMING CLIENT REQUEST
+                         */
             Console.WriteLine($"Client streaming request: {greeting}");
             var longGreetRequest = new LongGreetRequest() { Greeting = greeting };
             var streamingClientResponseStream = client.LongGreet();
@@ -75,11 +91,48 @@ namespace client
             var longGreetResponse = await streamingClientResponseStream.ResponseAsync;
             Console.WriteLine($"The server responded with the following:\n{longGreetResponse.Result}");
             Console.ReadKey();
+        }
 
+        private static async Task DoBidirectionalGreet(GreetingService.GreetingServiceClient client)
+        {
+            /*
+                BI-DIRECTIONAL STREAMING REQEUST
+            */
 
-            // shut down the connection to the gRPC server
-            channel.ShutdownAsync().Wait();
-            Console.ReadKey();
+            var random = new Random();
+            Console.WriteLine($"Bidirectional streaming request");
+
+            // the object to store the streams in
+            var stream = client.GreetEveryone();
+
+            // read from the response stream - this will be done asynchronosly in a new thread
+            var responseReaderTask = Task.Run(async () => 
+            { 
+                while (await stream.ResponseStream.MoveNext())
+                {
+                    Console.WriteLine($"Recieved: {stream.ResponseStream.Current.Result}");
+                }
+            });
+
+            // create a number of different greetings
+            Greeting[] greetings =
+            {
+                new Greeting { FirstName = "Sherlock", LastName = "Holmes" },
+                new Greeting { FirstName = "Elias", LastName = "Larsson" },
+                new Greeting { FirstName = "Alvin", LastName = "Larsson" },
+                new Greeting { FirstName = "Zarah", LastName = "Eriksson" }
+            };
+
+            // actually send the server a request for each of these greetings
+            foreach (var greeting in greetings)
+            {
+                await Task.Delay(random.Next(400,4000));
+                Console.WriteLine($"Sending: {greeting}");
+                await stream.RequestStream.WriteAsync(new GreetEveryoneRequest { Greeting = greeting });
+            }
+
+            await stream.RequestStream.CompleteAsync();
+            await responseReaderTask;
         }
     }
 }
