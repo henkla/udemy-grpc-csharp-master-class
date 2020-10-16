@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VUQqansUIQfmq/xIHnj9wxNvUJkf7IMGLCoHXY1TVwBb/vekEX/HJdgxkFvLpnasKoDQuWTb/WnYb9jB1bLPYQ==",
+  "dgSpecHash": "6RVeETURk619RUyLIXf/IVoX7wwAwdsDHul2FsqOL5GNEmDY0LvrOUztTtXFalJmvUujLMSHcnBthQwXS9bqyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HenrikLarsson\\Utveckling\\Repos\\training.grpc\\server\\server.csproj",
+  "projectFilePath": "C:\\Users\\HenrikLarsson\\Utveckling\\Training\\udemy-grpc-csharp-master-class\\01-training.grpc\\server\\server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\google.protobuf\\3.13.0\\google.protobuf.3.13.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc\\2.32.0\\grpc.2.32.0.nupkg.sha512",

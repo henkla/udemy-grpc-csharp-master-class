@@ -293,11 +293,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HenrikLarsson\\Utveckling\\Repos\\training.grpc\\server\\server.csproj",
+      "projectUniqueName": "C:\\Users\\HenrikLarsson\\Utveckling\\Training\\udemy-grpc-csharp-master-class\\01-training.grpc\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "C:\\Users\\HenrikLarsson\\Utveckling\\Repos\\training.grpc\\server\\server.csproj",
+      "projectPath": "C:\\Users\\HenrikLarsson\\Utveckling\\Training\\udemy-grpc-csharp-master-class\\01-training.grpc\\server\\server.csproj",
       "packagesPath": "C:\\Users\\HenrikLarsson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HenrikLarsson\\Utveckling\\Repos\\training.grpc\\server\\obj\\",
+      "outputPath": "C:\\Users\\HenrikLarsson\\Utveckling\\Training\\udemy-grpc-csharp-master-class\\01-training.grpc\\server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HenrikLarsson\\AppData\\Roaming\\NuGet\\NuGet.Config",
