@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareRootAPI.Client", "SquareRootAPI.Client\SquareRootAPI.Client.csproj", "{5547F43B-9BE6-4565-98FF-045E134699C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareRootAPI.Server", "SquareRootAPI.Server\SquareRootAPI.Server.csproj", "{9374B457-385E-40C3-95E6-8D8F48E8FCB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{E13C4FA4-B968-447A-9E53-C99E227A43C0}"
+	ProjectSection(SolutionItems) = preProject
+		sqrt.proto = sqrt.proto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5547F43B-9BE6-4565-98FF-045E134699C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5547F43B-9BE6-4565-98FF-045E134699C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5547F43B-9BE6-4565-98FF-045E134699C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5547F43B-9BE6-4565-98FF-045E134699C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9374B457-385E-40C3-95E6-8D8F48E8FCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9374B457-385E-40C3-95E6-8D8F48E8FCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9374B457-385E-40C3-95E6-8D8F48E8FCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9374B457-385E-40C3-95E6-8D8F48E8FCB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE965819-698C-469F-87B3-8D54A614F772}
+	EndGlobalSection
+EndGlobal

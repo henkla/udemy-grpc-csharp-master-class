@@ -1,0 +1,2 @@
+Models/Sqrt.cs \
+Models/SqrtGrpc.cs: ../sqrt.proto
