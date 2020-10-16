@@ -25,13 +25,15 @@ namespace PrimeNumberDecompositionAPI.Client
             var primeDecompositionClient = new PrimeNumberDecompositionService.PrimeNumberDecompositionServiceClient(channel);
 
             // this is the actual request data to be sent to the server (using the client)
-            var primeDecompositionRequest = new PrimeNumberDecompositionRequest { Number = 120 };
+            var number = 120;
+            var primeDecompositionRequest = new PrimeNumberDecompositionRequest { Number = number };
 
             // use the client to send the request to the server
             Console.WriteLine($"Sending the following request: {primeDecompositionRequest}");
             var primeDecompositionResponse = primeDecompositionClient.Decompose(primeDecompositionRequest);
 
             // extract the (stream of) response from the server
+            Console.WriteLine($"The prime number decomposition of {120} is:");
             while (await primeDecompositionResponse.ResponseStream.MoveNext())
             {
                 Console.WriteLine($"- {primeDecompositionResponse.ResponseStream.Current.PrimeNumber}");

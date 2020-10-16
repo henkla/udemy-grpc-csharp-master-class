@@ -20,6 +20,7 @@ namespace PrimeNumberDecompositionAPI.Server.Services
             {
                 if (number % primeFactor == 0)
                 {
+                    await Task.Delay(2000);
                     await responseStream.WriteAsync(new PrimeNumberDecompositionResponse() { PrimeNumber = primeFactor });
                     number /= primeFactor;
                 }
