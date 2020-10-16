@@ -2,6 +2,8 @@
 using Greet;
 using Grpc.Core;
 using System;
+using System.Linq;
+using System.Security;
 using System.Threading.Tasks;
 
 namespace client
@@ -43,7 +45,7 @@ namespace client
             /*
                     STREAMING SERVER REQUEST
              */
-            Console.WriteLine($"Server streaming requst: {greeting}");
+            Console.WriteLine($"Server streaming request: {greeting}");
 
             // the streaming server needs a specific request (wrapping the same data object as in the unary case)
             var streamingServerResponse = client.GreetManyTimes(new GreetManyTimesRequest { Greeting = greeting });
@@ -53,6 +55,25 @@ namespace client
             {
                 Console.WriteLine($"Response: {streamingServerResponse.ResponseStream.Current.Result}");
             }
+            Console.ReadKey();
+
+
+            /*
+                    STREAMING CLIENT REQUEST
+             */
+            Console.WriteLine($"Client streaming request: {greeting}");
+            var longGreetRequest = new LongGreetRequest() { Greeting = greeting };
+            var streamingClientResponseStream = client.LongGreet();
+            foreach (var i in Enumerable.Range(1, 10))
+            {
+                await Task.Delay(1000);
+                Console.WriteLine($"- Request: {greeting}");
+                await streamingClientResponseStream.RequestStream.WriteAsync(longGreetRequest);
+            }
+
+            await streamingClientResponseStream.RequestStream.CompleteAsync();
+            var longGreetResponse = await streamingClientResponseStream.ResponseAsync;
+            Console.WriteLine($"The server responded with the following:\n{longGreetResponse.Result}");
             Console.ReadKey();
 
 

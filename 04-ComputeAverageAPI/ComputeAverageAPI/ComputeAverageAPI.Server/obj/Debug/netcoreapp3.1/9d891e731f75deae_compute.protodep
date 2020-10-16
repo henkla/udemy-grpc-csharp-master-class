@@ -1,0 +1,2 @@
+Models/Compute.cs \
+Models/ComputeGrpc.cs: ../compute.proto

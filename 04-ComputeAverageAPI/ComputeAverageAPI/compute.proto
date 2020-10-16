@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package compute;
+
+message LongComputeRequest {
+	int32 value = 1;
+}
+
+message LongComputeResponse {
+	double result = 1;
+}
+
+service ComputeAverageService {
+	rpc LongCompute(stream LongComputeRequest) returns (LongComputeResponse) {}
+}

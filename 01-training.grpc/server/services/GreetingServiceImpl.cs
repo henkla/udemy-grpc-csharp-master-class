@@ -30,5 +30,17 @@ namespace server.services
                 await Task.Delay(500);
             }
         }
+
+        public override async Task<LongGreetResponse> LongGreet(IAsyncStreamReader<LongGreetRequest> requestStream, ServerCallContext context)
+        {
+            var result = "";
+
+            while (await requestStream.MoveNext())
+            {
+                result += $"Hello, {requestStream.Current.Greeting.FirstName} {requestStream.Current.Greeting.LastName}\n";
+            }
+
+            return new LongGreetResponse() { Result = result };
+        }
     }
 }
