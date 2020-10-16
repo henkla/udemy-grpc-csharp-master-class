@@ -1,0 +1,2 @@
+Models/Prime.cs \
+Models/PrimeGrpc.cs: ../prime.proto

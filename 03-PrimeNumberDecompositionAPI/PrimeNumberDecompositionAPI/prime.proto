@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package prime;
+
+message PrimeNumberDecompositionRequest {
+	int32 number = 1;
+}
+
+message PrimeNumberDecompositionResponse {
+	int32 primeNumber = 1;
+}
+
+service PrimeNumberDecompositionService {
+	rpc Decompose(PrimeNumberDecompositionRequest) returns (stream PrimeNumberDecompositionResponse) {}
+}

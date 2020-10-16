@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{88F49B11-C936-46E0-A435-FA3D4630E867}"
+	ProjectSection(SolutionItems) = preProject
+		prime.proto = prime.proto
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumberDecompositionAPI.Server", "PrimeNumberDecompositionAPI.Server\PrimeNumberDecompositionAPI.Server.csproj", "{5E596C47-3CC2-4F82-BE7E-1BB72CBB5C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumberDecompositionAPI.Client", "PrimeNumberDecompositionAPI.Client\PrimeNumberDecompositionAPI.Client.csproj", "{28E49621-9F48-4C16-8593-84301CC50778}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E596C47-3CC2-4F82-BE7E-1BB72CBB5C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E596C47-3CC2-4F82-BE7E-1BB72CBB5C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E596C47-3CC2-4F82-BE7E-1BB72CBB5C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E596C47-3CC2-4F82-BE7E-1BB72CBB5C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E49621-9F48-4C16-8593-84301CC50778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E49621-9F48-4C16-8593-84301CC50778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E49621-9F48-4C16-8593-84301CC50778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E49621-9F48-4C16-8593-84301CC50778}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5A49B90-35D4-4B0D-9732-19AC532E9371}
+	EndGlobalSection
+EndGlobal
