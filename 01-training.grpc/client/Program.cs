@@ -28,11 +28,12 @@ namespace client
 
             // this is the data object ()wrapped in a request) that will be sent to the server through the client
             var greeting = new Greeting { FirstName = "Henrik", LastName = "Larsson" };
-            
+
             //await DoUnaryGreet(client, greeting);
             //await DoStreamingServerGreet(client, greeting);
             //await DoDoStreamingClientGreet(client, greeting);
-            await DoBidirectionalGreet(client);
+            //await DoBidirectionalGreet(client);
+            await DoUnaryGreetWithDeadline(client, greeting);
 
             // shut down the connection to the gRPC server
             channel.ShutdownAsync().Wait();
@@ -133,6 +134,19 @@ namespace client
 
             await stream.RequestStream.CompleteAsync();
             await responseReaderTask;
+        }
+
+        private static async Task DoUnaryGreetWithDeadline(GreetingService.GreetingServiceClient client, Greeting greeting)
+        {
+            try
+            {
+                var response = await client.GreetWithDeadlineAsync(new GreetingRequest { Greeting = greeting }, deadline: DateTime.UtcNow.AddMilliseconds(500));
+                Console.WriteLine($"Response: {response.Result}");
+            }
+            catch (RpcException e) when (e.StatusCode == StatusCode.DeadlineExceeded)
+            {
+                Console.WriteLine($"Error - {e.StatusCode}: {e.Status.Detail}");
+            }
         }
     }
 }
