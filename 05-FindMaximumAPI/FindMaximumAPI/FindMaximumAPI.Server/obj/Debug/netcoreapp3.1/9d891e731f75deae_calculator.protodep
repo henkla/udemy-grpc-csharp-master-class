@@ -1,0 +1,2 @@
+Models/Calculator.cs \
+Models/CalculatorGrpc.cs: ../calculator.proto
