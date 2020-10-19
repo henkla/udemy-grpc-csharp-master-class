@@ -34,6 +34,10 @@ namespace GrpcBlog.Client
 
             Console.WriteLine($"The Id of the new blog is {response.Blog.Id}");
 
+            var blog = await client.ReadBlogAsync(new ReadBlogRequest { Id = response.Blog.Id });
+            Console.WriteLine($"Result for id = {response.Blog.Id}:");
+            Console.WriteLine(blog.Blog.ToString());
+
             Console.ReadKey();
             channel.ShutdownAsync().Wait();
         }

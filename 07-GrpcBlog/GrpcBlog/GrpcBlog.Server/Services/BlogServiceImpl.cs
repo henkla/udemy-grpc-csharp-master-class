@@ -2,6 +2,7 @@
 using Grpc.Core;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System;
 using System.Threading.Tasks;
 
 namespace GrpcBlog.Server.Services
@@ -40,15 +41,23 @@ namespace GrpcBlog.Server.Services
             if (result == null)
                 throw new RpcException(new Status(StatusCode.NotFound, $"The blog with id {request.Id} was not found in the database"));
 
-            var blog = new Blog.Blog
+            try
             {
-                Id = result.GetValue("_id").AsString,
-                AuthorId = result.GetValue("author_id").AsString,
-                Title = result.GetValue("title").AsString,
-                Content = result.GetValue("content").AsString
-            };
+                var blog = new Blog.Blog
+                {
+                    Id = result.GetValue("_id").ToString(),
+                    AuthorId = result.GetValue("author_id").ToString(),
+                    Title = result.GetValue("title").ToString(),
+                    Content = result.GetValue("content").ToString()
+                };
 
-            return new ReadBlogResponse { Blog = blog };
+                return new ReadBlogResponse { Blog = blog };
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error while building blog post: {e.Message}");
+                throw new RpcException(new Status(StatusCode.Internal, $"An error occured while retrieving the blog post"));
+            }
         }
     }
 }
