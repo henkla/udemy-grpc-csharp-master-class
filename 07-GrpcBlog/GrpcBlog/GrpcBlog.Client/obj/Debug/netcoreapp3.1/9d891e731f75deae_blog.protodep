@@ -1,0 +1,2 @@
+Models/Blog.cs \
+Models/BlogGrpc.cs: ../blog.proto
