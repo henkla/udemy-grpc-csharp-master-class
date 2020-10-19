@@ -27,10 +27,21 @@ namespace GrpcBlog.Client
             //await CreateBlog(client);
             //await ReadBlog(client);
             //await UpdateBlog(client, "Kjell Jennysson");
-            await DeleteBlog(client);
+            //await DeleteBlog(client);
+            await ListBlog(client);
 
             Console.ReadKey();
             channel.ShutdownAsync().Wait();
+        }
+
+        private static async Task ListBlog(BlogService.BlogServiceClient client)
+        {
+            var response = client.ListBlog(new ListBlogRequest { });
+
+            while (await response.ResponseStream.MoveNext())
+            {
+                Console.WriteLine($"\n{response.ResponseStream.Current.Blog}\n");
+            }
         }
 
         private static async Task DeleteBlog(BlogService.BlogServiceClient client)

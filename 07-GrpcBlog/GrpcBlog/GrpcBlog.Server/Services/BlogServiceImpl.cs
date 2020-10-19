@@ -3,6 +3,7 @@ using Grpc.Core;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GrpcBlog.Server.Services
@@ -110,6 +111,27 @@ namespace GrpcBlog.Server.Services
                     Content = result.GetValue("content").ToString()
                 }
             };
+        }
+
+        public override async Task ListBlog(ListBlogRequest request, IServerStreamWriter<ListBlogResponse> responseStream, ServerCallContext context)
+        {
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Empty;
+
+            var result = await _mongoCollection.FindAsync(filter);
+
+            foreach (var doc in result.ToList())
+            {
+                await responseStream.WriteAsync(new ListBlogResponse
+                {
+                    Blog = new Blog.Blog
+                    {
+                        Id = doc.GetValue("_id").ToString(),
+                        AuthorId = doc.GetValue("author_id").ToString(),
+                        Title = doc.GetValue("title").ToString(),
+                        Content = doc.GetValue("content").ToString()
+                    }
+                });
+            }
         }
     }
 }
