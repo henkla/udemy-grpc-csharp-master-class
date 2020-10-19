@@ -2,7 +2,9 @@
 using Greet;
 using Grpc.Core;
 using System;
+using System.IO;
 using System.Linq;
+using System.Net.Security;
 using System.Security;
 using System.Threading.Tasks;
 
@@ -14,13 +16,28 @@ namespace client
 
         static async Task Main(string[] args)
         {
+            // get all the certificate files
+            var clientCert = File.ReadAllText("ssl/client.crt");
+            var clientKey = File.ReadAllText("ssl/client.key");
+            var caCert = File.ReadAllText("ssl/ca.crt");
+
+            // we need the keypair for the client
+            var keypair = new KeyCertificatePair(clientCert, clientKey);
+
+            // create the channel credentials providing the ssl details above
+            var channelCredentials = new SslCredentials(caCert, keypair);
+
             // we need a channel - the actual connection
-            var channel = new Channel(target, ChannelCredentials.Insecure);
+            var channel = new Channel(target, channelCredentials);
             await channel.ConnectAsync().ContinueWith((task) =>
             {
                 // check if connection was successful
                 if (task.Status == TaskStatus.RanToCompletion)
                     Console.WriteLine("The client connected successfully");
+                else
+                {
+                    Console.WriteLine("Could not connect to the server");
+                }
             });
 
             // this is the actual greeting service client - it uses the connection above
@@ -29,11 +46,11 @@ namespace client
             // this is the data object ()wrapped in a request) that will be sent to the server through the client
             var greeting = new Greeting { FirstName = "Henrik", LastName = "Larsson" };
 
-            //await DoUnaryGreet(client, greeting);
+            await DoUnaryGreet(client, greeting);
             //await DoStreamingServerGreet(client, greeting);
             //await DoDoStreamingClientGreet(client, greeting);
             //await DoBidirectionalGreet(client);
-            await DoUnaryGreetWithDeadline(client, greeting);
+            //await DoUnaryGreetWithDeadline(client, greeting);
 
             // shut down the connection to the gRPC server
             channel.ShutdownAsync().Wait();
