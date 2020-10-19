@@ -42,7 +42,6 @@ C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-tra
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\client\obj\Debug\netcoreapp3.1\client.dll
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\client\obj\Debug\netcoreapp3.1\client.pdb
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\client\obj\Debug\netcoreapp3.1\client.genruntimeconfig.cache
-C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\client\obj\Debug\netcoreapp3.1\client.csprojAssemblyReference.cache
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\client\bin\Debug\netcoreapp3.1\ssl\ca.crt
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\client\bin\Debug\netcoreapp3.1\ssl\client.crt
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\client\bin\Debug\netcoreapp3.1\ssl\client.key

@@ -10,6 +10,7 @@
         "dependencies": {
           "Google.Protobuf": "3.13.0",
           "Grpc": "2.32.0",
+          "Grpc.Reflection": "2.32.0",
           "Grpc.Tools": "2.32.0"
         },
         "runtime": {
@@ -88,6 +89,18 @@
           }
         }
       },
+      "Grpc.Reflection/2.32.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.13.0",
+          "Grpc.Core.Api": "2.32.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Reflection.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.32.0.0"
+          }
+        }
+      },
       "Grpc.Tools/2.32.0": {},
       "System.Memory/4.5.3": {},
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {}
@@ -126,6 +139,13 @@
       "sha512": "sha512-t9H6P/oYA4ZQI4fWq4eEwq2GmMNqmOSRfz5+YIat7pQuFmz1hRC2Vq/fL9ZVV1mjd5kHqBlhupMdlsBOsaxeEw==",
       "path": "grpc.core.api/2.32.0",
       "hashPath": "grpc.core.api.2.32.0.nupkg.sha512"
+    },
+    "Grpc.Reflection/2.32.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7fRcLUazFYPe0iycWEreJL6dFKwa6UMDMZxVs84jSE659vu/z790xBHQ2z3FF9Ghm3FM0UJtCLYQEdQHcRLWsw==",
+      "path": "grpc.reflection/2.32.0",
+      "hashPath": "grpc.reflection.2.32.0.nupkg.sha512"
     },
     "Grpc.Tools/2.32.0": {
       "type": "package",

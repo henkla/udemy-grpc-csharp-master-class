@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6RVeETURk619RUyLIXf/IVoX7wwAwdsDHul2FsqOL5GNEmDY0LvrOUztTtXFalJmvUujLMSHcnBthQwXS9bqyw==",
+  "dgSpecHash": "27dBarf6RnuqKrwDGI2QG0U0MD2CF/me+Ngfw9LvZwkQvo6aT671jsmdkC/+xWtfEd8WQKbImIsQqQ6ygbt4Zg==",
   "success": true,
   "projectFilePath": "C:\\Users\\HenrikLarsson\\Utveckling\\Training\\udemy-grpc-csharp-master-class\\01-training.grpc\\server\\server.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc\\2.32.0\\grpc.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.core\\2.32.0\\grpc.core.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.core.api\\2.32.0\\grpc.core.api.2.32.0.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.reflection\\2.32.0\\grpc.reflection.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.tools\\2.32.0\\grpc.tools.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"

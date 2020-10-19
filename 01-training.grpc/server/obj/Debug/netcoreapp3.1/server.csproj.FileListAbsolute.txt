@@ -39,7 +39,6 @@ C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-tra
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.csprojAssemblyReference.cache
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.AssemblyInfoInputs.cache
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.AssemblyInfo.cs
-C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.csproj.CoreCompileInputs.cache
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.csproj.CopyComplete
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.dll
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.pdb
@@ -47,3 +46,5 @@ C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-tra
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\bin\Debug\netcoreapp3.1\ssl\ca.crt
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\bin\Debug\netcoreapp3.1\ssl\server.crt
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\bin\Debug\netcoreapp3.1\ssl\server.key
+C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\bin\Debug\netcoreapp3.1\Grpc.Reflection.dll
+C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\01-training.grpc\server\obj\Debug\netcoreapp3.1\server.csproj.CoreCompileInputs.cache

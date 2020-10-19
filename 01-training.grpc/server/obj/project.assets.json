@@ -72,6 +72,19 @@
           "lib/netstandard2.0/Grpc.Core.Api.dll": {}
         }
       },
+      "Grpc.Reflection/2.32.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.13.0",
+          "Grpc.Core.Api": "2.32.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Reflection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Reflection.dll": {}
+        }
+      },
       "Grpc.Tools/2.32.0": {
         "type": "package",
         "build": {
@@ -185,6 +198,26 @@
         "lib/netstandard2.0/Grpc.Core.Api.xml"
       ]
     },
+    "Grpc.Reflection/2.32.0": {
+      "sha512": "7fRcLUazFYPe0iycWEreJL6dFKwa6UMDMZxVs84jSE659vu/z790xBHQ2z3FF9Ghm3FM0UJtCLYQEdQHcRLWsw==",
+      "type": "package",
+      "path": "grpc.reflection/2.32.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.reflection.2.32.0.nupkg.sha512",
+        "grpc.reflection.nuspec",
+        "lib/net45/Grpc.Reflection.dll",
+        "lib/net45/Grpc.Reflection.pdb",
+        "lib/net45/Grpc.Reflection.xml",
+        "lib/netstandard1.5/Grpc.Reflection.dll",
+        "lib/netstandard1.5/Grpc.Reflection.pdb",
+        "lib/netstandard1.5/Grpc.Reflection.xml",
+        "lib/netstandard2.0/Grpc.Reflection.dll",
+        "lib/netstandard2.0/Grpc.Reflection.pdb",
+        "lib/netstandard2.0/Grpc.Reflection.xml"
+      ]
+    },
     "Grpc.Tools/2.32.0": {
       "sha512": "phODsWXk5K0fnCxPA5r2sINMUusNnWnceFExqVI1CR2HhkdzECZjKMYtzUZRktNl1zUkBON0kR/JHK7xcBw0gA==",
       "type": "package",
@@ -284,6 +317,7 @@
     ".NETCoreApp,Version=v3.1": [
       "Google.Protobuf >= 3.13.0",
       "Grpc >= 2.32.0",
+      "Grpc.Reflection >= 2.32.0",
       "Grpc.Tools >= 2.32.0"
     ]
   },
@@ -329,6 +363,10 @@
             "version": "[3.13.0, )"
           },
           "Grpc": {
+            "target": "Package",
+            "version": "[2.32.0, )"
+          },
+          "Grpc.Reflection": {
             "target": "Package",
             "version": "[2.32.0, )"
           },
