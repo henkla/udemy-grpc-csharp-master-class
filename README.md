@@ -8,4 +8,4 @@
 * [gRPC Deadlines](https://grpc.io/blog/deadlines)
 
 ### Reflection
-* [gRPC C# Server Reflection](https://github.com/grpc/grpc/blob/master/doc/csharp/server_reflection.m://github.com/grpc/grpc/blob/master/doc/csharp/server_reflection.md)
+* [gRPC C# Server Reflection](https://github.com/grpc/grpc/blob/master/doc/csharp/server_reflection.md)
