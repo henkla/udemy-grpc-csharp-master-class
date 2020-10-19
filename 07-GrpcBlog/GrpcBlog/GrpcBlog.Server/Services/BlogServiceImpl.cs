@@ -31,5 +31,24 @@ namespace GrpcBlog.Server.Services
 
             return Task.FromResult(new CreateBlogResponse() { Blog = blog });
         }
+
+        public override async Task<ReadBlogResponse> ReadBlog(ReadBlogRequest request, ServerCallContext context)
+        {
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(request.Id));
+            var result = await _mongoCollection.Find(filter).FirstOrDefaultAsync();
+
+            if (result == null)
+                throw new RpcException(new Status(StatusCode.NotFound, $"The blog with id {request.Id} was not found in the database"));
+
+            var blog = new Blog.Blog
+            {
+                Id = result.GetValue("_id").AsString,
+                AuthorId = result.GetValue("author_id").AsString,
+                Title = result.GetValue("title").AsString,
+                Content = result.GetValue("content").AsString
+            };
+
+            return new ReadBlogResponse { Blog = blog };
+        }
     }
 }
