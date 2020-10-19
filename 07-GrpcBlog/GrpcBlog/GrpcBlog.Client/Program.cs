@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using Blog;
+using Grpc.Core;
 using System;
 using System.Threading.Tasks;
 
@@ -20,8 +21,21 @@ namespace GrpcBlog.Client
                 }
             });
 
-            channel.ShutdownAsync().Wait();
+            var client = new BlogService.BlogServiceClient(channel);
+            var response = await client.CreateBlogAsync(new CreateBlogRequest 
+            { 
+                Blog = new Blog.Blog
+                {
+                    AuthorId = "Heinrich Larsson",
+                    Title = "How to not screw up",
+                    Content = "Screwing up is bad. You should avoid it by any means possible. Stay safe."
+                }
+            });
+
+            Console.WriteLine($"The Id of the new blog is {response.Blog.Id}");
+
             Console.ReadKey();
+            channel.ShutdownAsync().Wait();
         }
     }
 }
