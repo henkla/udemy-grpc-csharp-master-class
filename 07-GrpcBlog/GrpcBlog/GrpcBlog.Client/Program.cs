@@ -26,19 +26,23 @@ namespace GrpcBlog.Client
 
             //await CreateBlog(client);
             //await ReadBlog(client);
-            await UpdateBlog(client);
+            //await UpdateBlog(client, "Kjell Jennysson");
 
             Console.ReadKey();
             channel.ShutdownAsync().Wait();
         }
 
-        private static async Task UpdateBlog(BlogService.BlogServiceClient client)
+        private static async Task UpdateBlog(BlogService.BlogServiceClient client, string newAuthortitle)
         {
             var blogResponse = await client.ReadBlogAsync(new ReadBlogRequest { Id = _blogId });
             var blog = blogResponse.Blog;
-            blog.AuthorId = "Henrik Larsson";
 
+            Console.WriteLine($"\n{blog}");
 
+            blog.AuthorId = newAuthortitle;
+
+            var updateResponse = await client.UpdateBlogAsync(new UpdateBlogRequest { Blog = blog });
+            Console.WriteLine($"\n{updateResponse.Blog.ToString()}");
         }
 
         private static async Task ReadBlog(BlogService.BlogServiceClient client)

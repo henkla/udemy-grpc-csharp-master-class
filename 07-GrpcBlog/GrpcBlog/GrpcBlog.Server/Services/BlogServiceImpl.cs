@@ -76,7 +76,7 @@ namespace GrpcBlog.Server.Services
 
             var blog = new Blog.Blog
             {
-                Id = doc.GetValue("_id").ToString(),
+                Id = result.GetValue("_id").ToString(),
                 AuthorId = doc.GetValue("author_id").ToString(),
                 Title = doc.GetValue("title").ToString(),
                 Content = doc.GetValue("content").ToString()
