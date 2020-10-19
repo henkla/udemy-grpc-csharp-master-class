@@ -84,5 +84,32 @@ namespace GrpcBlog.Server.Services
 
             return new UpdateBlogResponse { Blog = blog };
         }
+
+        public override async Task<DeleteBlogResponse> DeleteBlog(DeleteBlogRequest request, ServerCallContext context)
+        {
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(request.Id));
+            var result = await _mongoCollection.Find(filter).FirstOrDefaultAsync();
+
+            if (result == null)
+                throw new RpcException(new Status(StatusCode.NotFound, $"The blog with id {request.Id} was not found in the database"));
+
+            var operationStatus = await _mongoCollection.DeleteOneAsync(filter);
+
+            if (operationStatus.DeletedCount == 0)
+            {
+                throw new RpcException(new Status(StatusCode.Internal, $"The blog with id {request.Id} could not be deleted"));
+            }
+
+            return new DeleteBlogResponse
+            {
+                Blog = new Blog.Blog
+                {
+                    Id = result.GetValue("_id").ToString(),
+                    AuthorId = result.GetValue("author_id").ToString(),
+                    Title = result.GetValue("title").ToString(),
+                    Content = result.GetValue("content").ToString()
+                }
+            };
+        }
     }
 }

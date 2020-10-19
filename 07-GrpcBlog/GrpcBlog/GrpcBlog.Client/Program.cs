@@ -27,9 +27,31 @@ namespace GrpcBlog.Client
             //await CreateBlog(client);
             //await ReadBlog(client);
             //await UpdateBlog(client, "Kjell Jennysson");
+            await DeleteBlog(client);
 
             Console.ReadKey();
             channel.ShutdownAsync().Wait();
+        }
+
+        private static async Task DeleteBlog(BlogService.BlogServiceClient client)
+        {
+            var blogBefore = await client.ReadBlogAsync(new ReadBlogRequest { Id = _blogId });
+
+            Console.WriteLine($"\nBefore:\n{blogBefore.Blog}");
+
+            var savedBlogPost = await client.DeleteBlogAsync(new DeleteBlogRequest { Id = _blogId });
+
+            Console.WriteLine($"\nSaved:\n{savedBlogPost.Blog}");
+
+            try
+            {
+                var maybeBlog = await client.ReadBlogAsync(new ReadBlogRequest { Id = _blogId });
+                Console.WriteLine($"\nSaved:\n{maybeBlog.Blog}");
+            }
+            catch (RpcException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         private static async Task UpdateBlog(BlogService.BlogServiceClient client, string newAuthortitle)
