@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zesCuLm6Vt9/355yf/tq19q6qhufIUVTiMEkSmddL0NwFIG1PeBzIqz51OuWXMC1gKmXO/hxZehljffjyIoKgA==",
+  "dgSpecHash": "eKW9dQMo4pbM5tAIVyvF+m1kW3k28J2AiSJSLpZuKua7jW3hFHHTz/tLi3ho9YwzEvpWikRPYoObe8s1UhTUeQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\HenrikLarsson\\Utveckling\\Training\\udemy-grpc-csharp-master-class\\07-GrpcBlog\\GrpcBlog\\GrpcBlog.Server\\GrpcBlog.Server.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc\\2.32.0\\grpc.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.core\\2.32.0\\grpc.core.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.core.api\\2.32.0\\grpc.core.api.2.32.0.nupkg.sha512",
+    "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.reflection\\2.32.0\\grpc.reflection.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\grpc.tools\\2.32.0\\grpc.tools.2.32.0.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\HenrikLarsson\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

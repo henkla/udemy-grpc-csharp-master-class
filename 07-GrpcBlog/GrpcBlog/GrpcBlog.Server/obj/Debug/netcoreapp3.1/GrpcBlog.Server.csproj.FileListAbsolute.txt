@@ -17,7 +17,6 @@ C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-Grp
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\bin\Debug\netcoreapp3.1\GrpcBlog.Server.dll
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\bin\Debug\netcoreapp3.1\GrpcBlog.Server.pdb
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
-C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\obj\Debug\netcoreapp3.1\GrpcBlog.Server.csproj.CoreCompileInputs.cache
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\obj\Debug\netcoreapp3.1\GrpcBlog.Server.dll
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\obj\Debug\netcoreapp3.1\GrpcBlog.Server.pdb
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\obj\Debug\netcoreapp3.1\GrpcBlog.Server.genruntimeconfig.cache
@@ -30,3 +29,5 @@ C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-Grp
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
 C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\bin\Debug\netcoreapp3.1\Grpc.Reflection.dll
+C:\Users\HenrikLarsson\Utveckling\Training\udemy-grpc-csharp-master-class\07-GrpcBlog\GrpcBlog\GrpcBlog.Server\obj\Debug\netcoreapp3.1\GrpcBlog.Server.csproj.CoreCompileInputs.cache
