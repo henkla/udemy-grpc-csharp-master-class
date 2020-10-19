@@ -59,5 +59,30 @@ namespace GrpcBlog.Server.Services
                 throw new RpcException(new Status(StatusCode.Internal, $"An error occured while retrieving the blog post"));
             }
         }
+
+        public override async Task<UpdateBlogResponse> UpdateBlog(UpdateBlogRequest request, ServerCallContext context)
+        {
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(request.Blog.Id));
+            var result = await _mongoCollection.Find(filter).FirstOrDefaultAsync();
+
+            if (result == null)
+                throw new RpcException(new Status(StatusCode.NotFound, $"The blog with id {request.Blog.Id} was not found in the database"));
+
+            var doc = new BsonDocument("author_id", request.Blog.AuthorId)
+                                  .Add("title", request.Blog.Title)
+                                  .Add("content", request.Blog.Content);
+
+            await _mongoCollection.ReplaceOneAsync(filter, doc);
+
+            var blog = new Blog.Blog
+            {
+                Id = doc.GetValue("_id").ToString(),
+                AuthorId = doc.GetValue("author_id").ToString(),
+                Title = doc.GetValue("title").ToString(),
+                Content = doc.GetValue("content").ToString()
+            };
+
+            return new UpdateBlogResponse { Blog = blog };
+        }
     }
 }
